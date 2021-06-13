@@ -8,9 +8,22 @@
     <title>Project: Library</title>
   </head>
   <body>
-    <div id="library-area" class="container is-max-desktop content is-small">
+    <div id="library-area" class="container content">
       <h1>My Library</h1>
-      <!-- append child elements here -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Pages</th>
+            <th>Read?</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <!-- append child elements here -->
+        </tbody>
+      </table>
     </div>
 
     <script src="scripts/index.js" type="module"></script>

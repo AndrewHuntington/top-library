@@ -1,4 +1,4 @@
-# Project Library
+# TOP Project: Library
 
 From the JavaScript section of [The Odin Project](http://www.theodinproject.com).
 

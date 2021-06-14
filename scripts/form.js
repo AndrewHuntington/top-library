@@ -1,12 +1,14 @@
 import books from "./dummyLibrary.js";
+import { tableBody, createNewRow } from "./index.js";
 import * as library from "./library.js";
 
 // Get Input from Form
 const addBookBtn = document.body.querySelector("#add-book");
 const form = document.body.querySelector("form");
 
-// checkbox = form.elements.read.checked
 addBookBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
   const title = form.elements.title.value;
   const author = form.elements.author.value;
   const pages = form.elements.pages.value;
@@ -15,5 +17,5 @@ addBookBtn.addEventListener("click", (e) => {
   const book = new library.Book(title, author, pages, read);
   library.addBookToLibrary(book);
 
-  console.log(library.myLibrary);
+  createNewRow(book, library.myLibrary.length);
 });

@@ -20,6 +20,7 @@
               <th>Author</th>
               <th>Pages</th>
               <th>Read?</th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody id="table-body">
@@ -32,7 +33,7 @@
     <!-- Form -->
     <div class="container content columns" id="form">
       <div class="column is-half is-offset-one-quarter">
-        <form action="" class="box">
+        <form action="/index.html" method="get" class="box">
           <h1>Add a Book</h1>
           <div class="field">
             <label for="" class="label">Title</label>
@@ -83,7 +84,12 @@
             </div>
           </div>
 
-          <submit class="button is-light" id="add-book">Add book</submit>
+          <input
+            type="submit"
+            class="button is-light"
+            id="add-book"
+            value="Add book"
+          />
         </form>
       </div>
     </div>

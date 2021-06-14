@@ -8,29 +8,88 @@
     <title>Main | Project: Library</title>
   </head>
   <body>
-    <div id="library-area" class="container content">
-      <h1>My Library</h1>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>No.</th>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Pages</th>
-            <th>Read?</th>
-          </tr>
-        </thead>
-        <tbody id="table-body">
-          <!-- append child elements here -->
-        </tbody>
-      </table>
-      <div class="columns is-centered">
-        <div class="column is-half btn-col">
-          <a href="form.html" class="button is-light">Add a book</a>
-        </div>
+    <!-- Library Table -->
+    <div id="library-area" class="container content columns">
+      <div class="column is-half box is-offset-one-quarter">
+        <h1>My Library</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Pages</th>
+              <th>Read?</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <!-- append child elements here -->
+          </tbody>
+        </table>
       </div>
     </div>
 
+    <!-- Form -->
+    <div class="container content columns" id="form">
+      <div class="column is-half is-offset-one-quarter">
+        <form action="" class="box">
+          <h1>Add a Book</h1>
+          <div class="field">
+            <label for="" class="label">Title</label>
+            <div class="control">
+              <input
+                type="text"
+                class="input"
+                name="title"
+                placeholder="Enter the name of the book"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="" class="label">Author</label>
+            <div class="control">
+              <input
+                type="text"
+                class="input"
+                name="author"
+                placeholder="Enter the author's name"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="" class="label">Number of Pages</label>
+            <div class="control">
+              <input
+                type="number"
+                min="1"
+                class="input"
+                name="pages"
+                placeholder="Enter the amount of pages"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control">
+              <label for="" class="checkbox">
+                <input type="checkbox" name="read" />
+                I have read this book
+              </label>
+            </div>
+          </div>
+
+          <submit class="button is-light" id="add-book">Add book</submit>
+        </form>
+      </div>
+    </div>
+
+    <!-- JS Scripts -->
     <script src="scripts/index.js" type="module"></script>
+    <script src="scripts/form.js" type="module"></script>
   </body>
 </html>

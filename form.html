@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Add Book | Project: Library</title>
+  </head>
+  <body>
+    <div class="container content columns" id="form">
+      <div class="column is-half is-offset-one-quarter">
+        <h1>Add a Book to Your Library</h1>
+        <form action="" class="box">
+          <div class="field">
+            <label for="" class="label">Title</label>
+            <div class="control">
+              <input
+                type="text"
+                class="input"
+                name="title"
+                placeholder="Enter the name of the book"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="" class="label">Author</label>
+            <div class="control">
+              <input
+                type="text"
+                class="input"
+                name="author"
+                placeholder="Enter the author's name"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="" class="label">Number of Pages</label>
+            <div class="control">
+              <input
+                type="number"
+                min="1"
+                class="input"
+                name="pages"
+                placeholder="Enter the amount of pages"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control">
+              <label for="" class="checkbox">
+                <input type="checkbox" name="read" />
+                I have read this book
+              </label>
+            </div>
+          </div>
+
+          <submit class="button is-light" id="add-book">Add book</submit>
+        </form>
+        <a href="index.html">< Go back</a>
+      </div>
+    </div>
+    <script src="scripts/form.js" type="module"></script>
+  </body>
+</html>

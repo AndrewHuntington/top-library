@@ -1,5 +1,14 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css";
 
+body {
+  margin-top: 20px;
+}
+
 h1 {
   text-align: center;
+}
+
+.btn-col {
+  display: flex;
+  justify-content: center;
 }

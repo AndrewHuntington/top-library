@@ -14,7 +14,6 @@ const addBookToLibrary = (...books) => {
   for (const book of books) {
     myLibrary.push(book);
   }
-  console.log(myLibrary);
 };
 
 export { myLibrary, Book, addBookToLibrary };

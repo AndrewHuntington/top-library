@@ -13,9 +13,10 @@ addBookBtn.addEventListener("click", (e) => {
   const author = form.elements.author.value;
   const pages = form.elements.pages.value;
   const read = form.elements.read.checked;
+  const index = library.myLibrary.length;
 
   const book = new library.Book(title, author, pages, read);
   library.addBookToLibrary(book);
 
-  createNewRow(book, library.myLibrary.length);
+  createNewRow(book, index);
 });

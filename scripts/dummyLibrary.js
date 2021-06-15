@@ -1,21 +1,8 @@
+import { Book } from "./library.js";
+
 export default [
-  { title: "The Hobbit", author: "J.R.R. Tolkien", pages: "295", read: true },
-  {
-    title: "The Fellowship of the Ring",
-    author: "J.R.R. Tolkien",
-    pages: "455",
-    read: true,
-  },
-  {
-    title: "The Two Towers",
-    author: "J.R.R. Tolkien",
-    pages: "398",
-    read: true,
-  },
-  {
-    title: "The Return of the King",
-    author: "J.R.R. Tolkien",
-    pages: "421",
-    read: false,
-  },
+  new Book("The Hobbit", "J.R.R. Tolkien", "295", true),
+  new Book("The Fellowship of the Ring", "J.R.R. Tolkien", "455", true),
+  new Book("The Two Towers", "J.R.R. Tolkien", "398", true),
+  new Book("The Return of the King", "J.R.R. Tolkien", "421", false),
 ];

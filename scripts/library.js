@@ -10,6 +10,10 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
+Book.prototype.changeReadStatus = function () {
+  this.read = !this.read;
+};
+
 const addBookToLibrary = (...books) => {
   for (const book of books) {
     myLibrary.push(book);

@@ -1,19 +1,40 @@
-import { myLibrary } from "./library.js";
+import { myLibrary, Book } from "./library.js";
 
-const tableBody = document.body.querySelector("#table-body");
+const tableBody = document.querySelector("#table-body");
 
 // Delete books from database and table
 const InitializeDeleteButtons = () => {
-  const deleteBtns = document.body.querySelectorAll(".delete");
+  const deleteBtns = document.querySelectorAll(".delete");
   deleteBtns.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      const index = btn.dataset.indexNumber;
-      delete myLibrary[index];
-      const elem = document.querySelector(`tr[data-index-number="${index}"]`);
-      if (elem) {
-        elem.remove();
-      }
-    });
+    if (btn.classList.contains("uninitialized")) {
+      btn.classList.remove("uninitialized");
+
+      btn.addEventListener("click", (e) => {
+        const index = btn.dataset.indexNumber;
+        delete myLibrary[index];
+        const elem = document.querySelector(`tr[data-index-number="${index}"]`);
+        if (elem) {
+          elem.remove();
+        }
+      });
+    }
+  });
+};
+
+// Change book read status on button click
+const InitializeReadButtons = () => {
+  const readBtns = document.querySelectorAll(".read");
+  readBtns.forEach((btn) => {
+    if (btn.classList.contains("uninitialized")) {
+      btn.classList.remove("uninitialized");
+
+      btn.addEventListener("click", (e) => {
+        const index = btn.dataset.indexNumber;
+        let book = myLibrary[index];
+        book.changeReadStatus();
+        console.log(book);
+      });
+    }
   });
 };
 
@@ -26,20 +47,23 @@ const createNewRow = (book, index) => {
       <td>${book.title}</td>
       <td>${book.author}</td>
       <td>${book.pages}</td>
-      <td>${book.read ? "Yes" : "No"}</td>
+      <td>${
+        book.read
+          ? `<button class='uninitialized read button is-small is-success' data-index-number="${index}">Yes</button>`
+          : `<button class='uninitialized read button is-small is-danger' data-index-number="${index}">No&emsp13;</button>`
+      }</td>
       <td>
-        <button class='delete' data-index-number="${index}"></button>
+        <button class='uninitialized delete' data-index-number="${index}"></button>
       </td>
     `;
 
   tableBody.appendChild(bookInfo);
   InitializeDeleteButtons();
+  InitializeReadButtons();
 };
 
 myLibrary.forEach((book, index) => {
   createNewRow(book, index);
 });
-
-InitializeDeleteButtons();
 
 export { tableBody, createNewRow };

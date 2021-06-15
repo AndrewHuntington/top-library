@@ -3,10 +3,11 @@ import { tableBody, createNewRow } from "./index.js";
 import * as library from "./library.js";
 
 // Get Input from Form
-const addBookBtn = document.body.querySelector("#add-book");
-const form = document.body.querySelector("form");
+const addBookBtn = document.querySelector("#add-book");
+const form = document.querySelector("form");
 
 addBookBtn.addEventListener("click", (e) => {
+  // Prevent page reload (which will reset the library)
   e.preventDefault();
 
   const title = form.elements.title.value;
@@ -19,4 +20,5 @@ addBookBtn.addEventListener("click", (e) => {
   library.addBookToLibrary(book);
 
   createNewRow(book, index);
+  form.reset();
 });

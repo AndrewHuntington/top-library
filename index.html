@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script defer src="scripts/index.js" type="module"></script>
+    <script defer src="scripts/form.js" type="module"></script>
     <title>Main | Project: Library</title>
   </head>
   <body>
     <!-- Library Table -->
     <div id="library-area" class="container content columns">
-      <div class="column is-half box is-offset-one-quarter">
+      <div class="column is-three-fifths box is-offset-one-fifth">
         <h1>My Library</h1>
         <table class="table">
           <thead>
@@ -33,7 +35,7 @@
     <!-- Form -->
     <div class="container content columns" id="form">
       <div class="column is-half is-offset-one-quarter">
-        <form action="/index.html" method="get" class="box">
+        <form action="/index.html" method="get" class="box" autocomplete="off">
           <h1>Add a Book</h1>
           <div class="field">
             <label for="" class="label">Title</label>
@@ -93,9 +95,5 @@
         </form>
       </div>
     </div>
-
-    <!-- JS Scripts -->
-    <script src="scripts/index.js" type="module"></script>
-    <script src="scripts/form.js" type="module"></script>
   </body>
 </html>

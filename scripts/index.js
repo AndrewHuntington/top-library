@@ -34,9 +34,8 @@ const InitializeReadButtons = () => {
         book.changeReadStatus();
         btn.classList.toggle("is-success");
         btn.classList.toggle("is-danger");
-        btn.innerHTML = `
-          ${btn.innerHTML === "Yes" ? "No&emsp13;" : "Yes"}
-        `;
+        btn.innerHTML = `${btn.innerHTML === "Yes" ? "No&emsp13;" : "Yes"}`;
+        console.log(btn.innerHTML);
         console.log(book);
       });
     }

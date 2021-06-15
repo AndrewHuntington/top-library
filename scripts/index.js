@@ -32,6 +32,11 @@ const InitializeReadButtons = () => {
         const index = btn.dataset.indexNumber;
         let book = myLibrary[index];
         book.changeReadStatus();
+        btn.classList.toggle("is-success");
+        btn.classList.toggle("is-danger");
+        btn.innerHTML = `
+          ${btn.innerHTML === "Yes" ? "No&emsp13;" : "Yes"}
+        `;
         console.log(book);
       });
     }

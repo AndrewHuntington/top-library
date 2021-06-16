@@ -1,7 +1,6 @@
-// Start with some dummy data
-import library from "./library.js";
+import { stringifyLibrary } from "./library.js";
 
-const myLibrary = library.length ? library : [];
+const myLibrary = localStorage.book ? JSON.parse(localStorage.book) : [];
 
 // Constructor function
 function Book(title, author, pages, read) {
@@ -15,10 +14,9 @@ Book.prototype.changeReadStatus = function () {
   this.read = !this.read;
 };
 
-const addBookToLibrary = (...books) => {
-  for (const book of books) {
-    myLibrary.push(book);
-  }
+const addBookToLibrary = (book) => {
+  myLibrary.push(book);
+  stringifyLibrary(myLibrary);
 };
 
 export { myLibrary, Book, addBookToLibrary };

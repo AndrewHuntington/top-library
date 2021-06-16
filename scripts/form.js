@@ -1,5 +1,5 @@
-import library from "./library.js";
-import { tableBody, createNewRow } from "./index.js";
+// import library from "./library.js";
+import { createNewRow } from "./index.js";
 import { myLibrary, Book, addBookToLibrary } from "./book.js";
 
 // Get Input from Form

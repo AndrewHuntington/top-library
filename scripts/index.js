@@ -1,4 +1,7 @@
 import { myLibrary, Book } from "./book.js";
+import { stringifyLibrary } from "./library.js";
+
+const filteredLibrary = myLibrary.filter((e) => e !== null);
 
 // Delete books from database and table
 // Finds uninitialized delete buttons and adds delete functionality
@@ -10,7 +13,8 @@ const InitializeDeleteButtons = () => {
 
       btn.addEventListener("click", (e) => {
         const index = btn.dataset.indexNumber;
-        delete myLibrary[index];
+        delete filteredLibrary[index];
+        stringifyLibrary(filteredLibrary);
         const elem = document.querySelector(`tr[data-index-number="${index}"]`);
         if (elem) {
           elem.remove();
@@ -30,8 +34,9 @@ const InitializeReadButtons = () => {
 
       btn.addEventListener("click", (e) => {
         const index = btn.dataset.indexNumber;
-        let book = myLibrary[index];
+        let book = filteredLibrary[index];
         book.changeReadStatus();
+        stringifyLibrary(filteredLibrary);
         btn.classList.toggle("is-success");
         btn.classList.toggle("is-danger");
         btn.innerHTML = `${btn.innerHTML === "Yes" ? "No&emsp13;" : "Yes"}`;
@@ -66,7 +71,9 @@ const createNewRow = (book, index) => {
   InitializeReadButtons();
 };
 
-myLibrary.forEach((book, index) => {
+console.log(filteredLibrary);
+stringifyLibrary(filteredLibrary);
+filteredLibrary.forEach((book, index) => {
   createNewRow(book, index);
 });
 

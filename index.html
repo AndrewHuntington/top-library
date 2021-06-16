@@ -5,33 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
     <script defer src="scripts/index.js" type="module"></script>
     <script defer src="scripts/form.js" type="module"></script>
     <title>Main | Project: Library</title>
   </head>
   <body>
-    <!-- Library Table -->
-    <div id="library-area" class="container content columns">
-      <div class="column is-three-fifths box is-offset-one-fifth">
-        <h1>My Library</h1>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Author</th>
-              <th>Pages</th>
-              <th>Read?</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          <tbody id="table-body">
-            <!-- append child elements here -->
-          </tbody>
-        </table>
-      </div>
-    </div>
-
     <!-- Form -->
     <div class="container content columns" id="form">
       <div class="column is-half is-offset-one-quarter">
@@ -93,6 +71,27 @@
             value="Add book"
           />
         </form>
+      </div>
+    </div>
+
+    <!-- Library Table -->
+    <div id="library-area" class="container content columns">
+      <div class="column is-three-fifths box is-offset-one-fifth">
+        <h1>My Library</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Pages</th>
+              <th>Read?</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <!-- append child elements here -->
+          </tbody>
+        </table>
       </div>
     </div>
   </body>

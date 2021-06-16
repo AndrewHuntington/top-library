@@ -1,8 +1,7 @@
-import { myLibrary, Book } from "./library.js";
-
-const tableBody = document.querySelector("#table-body");
+import { myLibrary, Book } from "./book.js";
 
 // Delete books from database and table
+// Finds uninitialized delete buttons and adds delete functionality
 const InitializeDeleteButtons = () => {
   const deleteBtns = document.querySelectorAll(".delete");
   deleteBtns.forEach((btn) => {
@@ -22,6 +21,7 @@ const InitializeDeleteButtons = () => {
 };
 
 // Change book read status on button click
+// Finds uninitialized read buttons and adds functionality
 const InitializeReadButtons = () => {
   const readBtns = document.querySelectorAll(".read");
   readBtns.forEach((btn) => {
@@ -35,19 +35,19 @@ const InitializeReadButtons = () => {
         btn.classList.toggle("is-success");
         btn.classList.toggle("is-danger");
         btn.innerHTML = `${btn.innerHTML === "Yes" ? "No&emsp13;" : "Yes"}`;
-        console.log(btn.innerHTML);
-        console.log(book);
       });
     }
   });
 };
 
+const tableBody = document.querySelector("#table-body");
+
+// Adds new rows to your library table for each book
 const createNewRow = (book, index) => {
   const bookInfo = document.createElement("tr");
   bookInfo.setAttribute("data-index-number", index);
 
   bookInfo.innerHTML = `
-      <th>${index + 1}</th>
       <td>${book.title}</td>
       <td>${book.author}</td>
       <td>${book.pages}</td>

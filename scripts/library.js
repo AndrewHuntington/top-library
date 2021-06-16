@@ -1,23 +1,13 @@
-// Start with some dummy data
-import books from "./dummyLibrary.js";
-const myLibrary = books;
+import { Book } from "./book.js";
 
-// Constructor function
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-}
+// Dummy data
+export default [
+  new Book("The Hobbit", "J.R.R. Tolkien", "295", true),
+  new Book("The Fellowship of the Ring", "J.R.R. Tolkien", "455", true),
+  new Book("The Two Towers", "J.R.R. Tolkien", "398", true),
+  new Book("The Return of the King", "J.R.R. Tolkien", "421", false),
+];
 
-Book.prototype.changeReadStatus = function () {
-  this.read = !this.read;
-};
-
-const addBookToLibrary = (...books) => {
-  for (const book of books) {
-    myLibrary.push(book);
-  }
-};
-
-export { myLibrary, Book, addBookToLibrary };
+// export default {
+//   books: [],
+// };

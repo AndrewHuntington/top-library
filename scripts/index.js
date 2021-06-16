@@ -35,6 +35,7 @@ const InitializeReadButtons = () => {
       btn.addEventListener("click", (e) => {
         const index = btn.dataset.indexNumber;
         let book = filteredLibrary[index];
+        book.__proto__ = Object.create(Book.prototype);
         book.changeReadStatus();
         stringifyLibrary(filteredLibrary);
         btn.classList.toggle("is-success");
@@ -45,10 +46,9 @@ const InitializeReadButtons = () => {
   });
 };
 
-const tableBody = document.querySelector("#table-body");
-
 // Adds new rows to your library table for each book
 const createNewRow = (book, index) => {
+  const tableBody = document.querySelector("#table-body");
   const bookInfo = document.createElement("tr");
   bookInfo.setAttribute("data-index-number", index);
 
@@ -71,10 +71,11 @@ const createNewRow = (book, index) => {
   InitializeReadButtons();
 };
 
-console.log(filteredLibrary);
 stringifyLibrary(filteredLibrary);
-filteredLibrary.forEach((book, index) => {
-  createNewRow(book, index);
-});
+if (filteredLibrary.length > 0) {
+  filteredLibrary.forEach((book, index) => {
+    createNewRow(book, index);
+  });
+}
 
-export { tableBody, createNewRow };
+export { createNewRow };

@@ -6,74 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script defer src="scripts/index.js" type="module"></script>
-    <script defer src="scripts/form.js" type="module"></script>
     <title>Main | Project: Library</title>
   </head>
   <body>
-    <!-- Form -->
-    <div class="container content columns" id="form">
-      <div class="column is-half is-offset-one-quarter">
-        <form action="/index.html" method="get" class="box" autocomplete="off">
-          <h1>Add a Book</h1>
-          <div class="field">
-            <label for="" class="label">Title</label>
-            <div class="control">
-              <input
-                type="text"
-                class="input"
-                name="title"
-                placeholder="Enter the name of the book"
-                required
-              />
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="" class="label">Author</label>
-            <div class="control">
-              <input
-                type="text"
-                class="input"
-                name="author"
-                placeholder="Enter the author's name"
-                required
-              />
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="" class="label">Number of Pages</label>
-            <div class="control">
-              <input
-                type="number"
-                min="1"
-                class="input"
-                name="pages"
-                placeholder="Enter the amount of pages"
-                required
-              />
-            </div>
-          </div>
-
-          <div class="field">
-            <div class="control">
-              <label for="" class="checkbox">
-                <input type="checkbox" name="read" />
-                I have read this book
-              </label>
-            </div>
-          </div>
-
-          <input
-            type="submit"
-            class="button is-light"
-            id="add-book"
-            value="Add book"
-          />
-        </form>
-      </div>
-    </div>
-
     <!-- Library Table -->
     <div id="library-area" class="container content columns">
       <div class="column is-three-fifths box is-offset-one-fifth">
@@ -92,6 +27,9 @@
             <!-- append child elements here -->
           </tbody>
         </table>
+        <a href="form.html"
+          ><button class="button is-light">Add a book</button></a
+        >
       </div>
     </div>
   </body>

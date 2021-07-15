@@ -34,8 +34,9 @@ const InitializeReadButtons = () => {
 
       btn.addEventListener("click", (e) => {
         const index = btn.dataset.indexNumber;
-        let book = filteredLibrary[index];
-        book.__proto__ = Object.create(Book.prototype);
+        // Not sure if creating a new book obj on each click is the greatest idea...
+        const { title, author, pages, read } = filteredLibrary[index];
+        let book = new Book(title, author, pages, read);
         book.changeReadStatus();
         stringifyLibrary(filteredLibrary);
         btn.classList.toggle("is-success");
